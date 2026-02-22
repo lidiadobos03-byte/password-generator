@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Password Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Source+Code+Pro:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="hero">
+        <div class="badge">Local, fast, no tracking</div>
+        <h1>Password Generator</h1>
+        <p>
+          Build strong passwords instantly. Tune length, pick character sets, and
+          copy with one click.
+        </p>
+      </section>
+
+      <section class="panel" aria-label="Generator">
+        <div class="output">
+          <div class="output-top">
+            <span class="label">Generated password</span>
+            <button class="btn ghost" id="copyBtn" type="button">Copy</button>
+          </div>
+          <div class="output-value" id="password" aria-live="polite">
+            Tap Generate
+          </div>
+          <div class="meter" aria-hidden="true">
+            <div class="meter-fill" id="strengthFill"></div>
+          </div>
+          <div class="strength" id="strengthText">Strength: —</div>
+        </div>
+
+        <div class="controls">
+          <div class="control">
+            <label for="length">Length</label>
+            <div class="length-row">
+              <input id="length" type="range" min="6" max="32" value="16" />
+              <div class="length-badge" id="lengthValue">16</div>
+            </div>
+          </div>
+
+          <div class="options">
+            <label class="toggle">
+              <input id="lower" type="checkbox" checked />
+              <span>Lowercase</span>
+            </label>
+            <label class="toggle">
+              <input id="upper" type="checkbox" checked />
+              <span>Uppercase</span>
+            </label>
+            <label class="toggle">
+              <input id="digits" type="checkbox" checked />
+              <span>Digits</span>
+            </label>
+            <label class="toggle">
+              <input id="symbols" type="checkbox" />
+              <span>Symbols</span>
+            </label>
+          </div>
+
+          <div class="actions">
+            <button class="btn primary" id="generateBtn" type="button">
+              Generate
+            </button>
+            <button class="btn" id="shuffleBtn" type="button">Shuffle</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="tips" aria-label="Tips">
+        <div class="tip">Use 12+ characters for stronger security.</div>
+        <div class="tip">Mix letters, digits, and symbols.</div>
+        <div class="tip">Never reuse passwords across sites.</div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
